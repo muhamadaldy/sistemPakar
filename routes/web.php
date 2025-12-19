@@ -15,7 +15,7 @@ use App\Http\Controllers\AturanController;
 use App\Http\Controllers\GejalaController;
 
 Route::get('/', function () {
-   return redirect('/login');
+   return redirect()->route('login');
 });
 
 // Grup untuk route yang hanya bisa diakses oleh tamu (belum login)
