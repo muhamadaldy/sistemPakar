@@ -14,7 +14,10 @@ use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\AturanController;
 use App\Http\Controllers\GejalaController;
 
-
+Route::get('/', function () {
+    // Arahkan langsung ke route bernama 'login'
+    return redirect()->route('login');
+});
 
 // Grup untuk route yang hanya bisa diakses oleh tamu (belum login)
 
