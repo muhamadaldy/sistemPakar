@@ -80,3 +80,17 @@
     </div>
 </main>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Cari elemen container pesan
+        var chatBox = document.querySelector('.direct-chat-messages');
+        
+        // Jika elemen ditemukan, scroll ke paling bawah
+        if (chatBox) {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    });
+</script>
+@endpush

@@ -160,104 +160,84 @@
     border-bottom-right-radius: 0.5rem;
 }
 
-/* 1. Tablet & Layar Menengah (Max Width: 768px) */
-@media (max-width: 768px) {
-    /* --- Modal: Gambar lebih lebar di tablet --- */
-    #modal-image {
-        max-width: 90vw; /* Mengambil 90% lebar layar */
-        max-height: 70vh;
+/* 1. Tablet & Mobile Landscape (Max Width: 991px) */
+@media (max-width: 991px) {
+    /* Menyesuaikan Header Card agar Search bar turun ke bawah jika sempit */
+    .card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .card-tools {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Meng-override inline style width: 250px pada form */
+    .card-tools form.input-group {
+        width: 100% !important;
     }
 }
 
-/* 2. Mobile / HP (Max Width: 576px) */
-@media (max-width: 576px) {
-    
-    /* --- Gaya Kartu (Hemat Ruang) --- */
-    .card-header {
-        padding: 1rem; /* Kurangi padding header */
-    }
-    
-    .card-header .card-title {
-        font-size: 1.1rem;
+/* 2. Mobile Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+    /* Header Halaman (Judul & Breadcrumb) */
+    .app-content-header .row {
+        flex-direction: column;
+        text-align: center;
     }
 
-    /* --- Tabel di HP --- */
-    /* Matikan efek zoom pada baris tabel di layar sentuh agar scrolling mulus */
-    .table-hover tbody tr:hover {
-        transform: none; 
-        box-shadow: none;
-        background-color: transparent; /* Atau biarkan default */
-    }
-    
-    .table thead th {
-        font-size: 0.75rem; /* Font header tabel lebih kecil */
-        padding: 0.5rem;
-    }
-    
-    .table tbody td {
-        font-size: 0.85rem;
-        padding: 0.5rem;
+    .app-content-header .col-sm-6 {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
-    /* --- Gambar Thumbnail --- */
-    .disease-image-thumbnail {
-        width: 70px;  /* Perkecil ukuran thumbnail */
-        height: 50px;
-        /* Matikan efek zoom hover gambar di HP */
-        transition: none; 
-    }
-    
-    .disease-image-thumbnail:hover {
-        transform: none;
-        box-shadow: none;
+    .breadcrumb {
+        justify-content: center;
+        float: none !important;
     }
 
-    /* --- Modal Lightbox (Penting untuk UX Mobile) --- */
-    #modal-image {
-        max-width: 95vw; /* Gambar hampir full width */
+    /* Modal pada layar kecil */
+    .image-modal-content {
+        width: 95%;
+        margin-top: 50px;
     }
 
     .close-image-modal {
-        /* Pindahkan tombol close ke dalam area pandang aman */
         top: 10px;
-        right: 10px;
-        font-size: 2rem;
-        
-        /* Tambahkan background agar terlihat jelas di atas gambar apa pun */
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%; /* Jadi bulat */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 4px; /* Penyesuaian vertikal ikon '×' */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    #modal-caption {
-        font-size: 0.9rem; /* Caption lebih kecil */
-        padding: 0 10px;
-    }
-
-    /* --- Paginasi --- */
-    .custom-pagination .page-link {
-        padding: 0.375rem 0.75rem; /* Tombol paginasi sedikit lebih kecil */
-        font-size: 0.9rem;
-    }
-
-    .custom-pagination .page-link:hover {
-        transform: none; /* Matikan efek naik saat hover di HP */
+        right: 20px;
+        font-size: 30px;
     }
 }
 
-/* 3. Penyesuaian Landscape di HP (Layar Pendek) */
-@media (max-height: 500px) and (orientation: landscape) {
-    #modal-image {
-        max-height: 85vh; /* Biarkan gambar lebih tinggi */
+/* 3. Small Mobile Devices (Max Width: 576px) */
+@media (max-width: 576px) {
+    /* Mengecilkan font tabel agar muat lebih banyak konten */
+    .table {
+        font-size: 0.85rem;
     }
-    .card-header {
-        padding: 0.5rem 1rem; /* Header lebih tipis lagi */
+
+    /* Mengatur ulang padding cell tabel */
+    .table th, .table td {
+        padding: 0.5rem;
+        white-space: nowrap; /* Mencegah teks turun ke bawah berantakan */
+    }
+
+    /* Menyesuaikan ukuran gambar thumbnail */
+    .disease-image-thumbnail {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Judul Card lebih kecil */
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    /* Pagination di tengah */
+    .custom-pagination {
+        justify-content: center !important;
     }
 }

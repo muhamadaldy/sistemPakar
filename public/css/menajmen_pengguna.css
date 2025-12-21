@@ -1,44 +1,71 @@
-/* Tablet & Mobile (Max Width: 768px) */
-@media (max-width: 768px) {
-    /* Header Stack (Atas Bawah) */
-    .app-content-header .row {
-        display: flex; flex-direction: column; gap: 15px; text-align: center;
-    }
+/* 1. Tablet & Layar Menengah (Max Width: 991px) */
+@media (max-width: 991px) {
+    /* Mengatur Header Card agar elemen turun ke bawah */
     .app-content-header .col-sm-6 {
-        width: 100%; display: flex; flex-direction: column; 
-        align-items: center; justify-content: center;
+        margin-bottom: 15px;
+        text-align: center;
     }
-    .app-content-header h3 { margin-bottom: 15px !important; font-size: 1.5rem; }
-    
-    /* Tombol & Search */
-    .app-content-header .card-tools {
-        width: 100%; flex-direction: column; gap: 10px;
+
+    /* Reset float pada breadcrumb agar rata tengah/kiri */
+    .breadcrumb {
+        float: none !important;
+        justify-content: center;
     }
-    .app-content-header .card-tools form.input-group { width: 100% !important; }
-    .app-content-header .btn-primary { width: 100%; margin-right: 0 !important; }
-    
-    /* Breadcrumb */
-    .breadcrumb { justify-content: center; margin-top: 5px; }
+
+    /* Container tombol tambah & search */
+    .card-tools {
+        margin-top: 15px;
+        flex-direction: column; /* Tombol dan Search menumpuk ke bawah */
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Tombol Tambah Pengguna jadi full width agar mudah ditekan */
+    .card-tools .btn-primary {
+        margin-right: 0 !important; /* Hapus margin kanan bawaan bootstrap (me-3) */
+        width: 100%;
+    }
+
+    /* Form Pencarian */
+    .card-tools form.input-group {
+        /* Penting: !important digunakan untuk menimpa inline style "width: 250px" di HTML */
+        width: 100% !important; 
+    }
 }
 
-/* Mobile Only (Max Width: 576px) */
+/* 2. Mobile (Max Width: 576px) */
 @media (max-width: 576px) {
-    /* Card Header dalam Tabel */
-    .card .card-header {
-        display: flex; flex-direction: column; align-items: start; gap: 10px;
+    /* Judul Halaman */
+    h3.mb-0 {
+        font-size: 1.5rem; /* Perkecil ukuran font judul */
     }
-    .card .card-header .card-title { margin-bottom: 5px; }
-    .card .card-header .card-tools { width: 100%; margin-top: 5px; }
-    .card .card-header form.input-group { width: 100% !important; }
 
-    /* Scrollable Table Fix */
-    .table-responsive { -webkit-overflow-scrolling: touch; }
+    /* Penyesuaian Tabel */
+    .table {
+        font-size: 0.85rem; /* Font tabel lebih kecil */
+    }
+
     .table th, .table td {
-        white-space: nowrap; vertical-align: middle;
-        font-size: 0.9rem; padding: 0.5rem;
+        padding: 0.5rem; /* Kurangi padding sel agar muat lebih banyak */
+        white-space: nowrap; /* Mencegah teks turun ke bawah (memaksa scroll horizontal) */
+    }
+
+    /* Kolom Aksi */
+    .table td:last-child {
+        display: flex;
+        gap: 5px;
+    }
+
+    /* Tombol di dalam tabel (Edit/Hapus) */
+    .table .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
     }
     
-    /* Action Buttons */
-    .table td:last-child { min-width: 120px; }
-    .table td:last-child .btn { padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+    /* Pagination */
+    .card-footer {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
 }
