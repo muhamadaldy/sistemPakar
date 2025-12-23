@@ -13,6 +13,7 @@ use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\AturanController;
 use App\Http\Controllers\GejalaController;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
     // Arahkan langsung ke route bernama 'login'
@@ -113,4 +114,12 @@ Route::prefix('petani')->name('petani.')->group(function () {
 
     Route::get('/penyakit', [PenyakitController::class, 'index'])->name('penyakit.index');
     Route::get('/gejala', [GejalaController::class, 'index'])->name('gejala.index');
+});
+
+Route::get('/bersih-bersih', function() {
+    Artisan::call('view:clear');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    return "Cache berhasil dibersihkan! Silakan coba buka halaman error tadi.";
 });
