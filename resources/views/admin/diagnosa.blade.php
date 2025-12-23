@@ -1,4 +1,4 @@
-@extends('admin.layout.dashboard')
+@extends('Admin.layout.dashboard')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/diagnosa.css') }}">
