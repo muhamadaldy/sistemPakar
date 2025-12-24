@@ -1,3 +1,113 @@
+/* ===============================
+   GLOBAL DASHBOARD IMPROVEMENT
+================================ */
+.app-main {
+    background: #f4f6f9;
+}
+
+/* Title dashboard */
+.app-content-header h3 {
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: transparent;
+    margin-bottom: 0;
+}
+
+/* ===============================
+   STATISTIC BOX (SMALL BOX)
+================================ */
+.small-box {
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.small-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.15);
+}
+
+.small-box h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.small-box p {
+    font-size: .95rem;
+    opacity: .9;
+}
+
+.small-box-footer {
+    font-weight: 500;
+}
+
+/* Gradient each card */
+.text-bg-primary {
+    background: linear-gradient(135deg,#0d6efd,#4e8ef7) !important;
+}
+.text-bg-danger {
+    background: linear-gradient(135deg,#dc3545,#ff6b6b) !important;
+}
+.text-bg-warning {
+    background: linear-gradient(135deg,#f4b400,#fbbc04) !important;
+}
+.text-bg-success {
+    background: linear-gradient(135deg,#198754,#2ecc71) !important;
+}
+
+/* ===============================
+   CARD GLOBAL
+================================ */
+.card {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.card-header {
+    border-bottom: none;
+    background: transparent;
+}
+
+/* ===============================
+   MAP CARD
+================================ */
+#map {
+    border-radius: 16px;
+}
+
+/* ===============================
+   WEATHER CARD (override)
+================================ */
+#weather-card {
+    border-radius: 22px;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.app-sidebar {
+    background: linear-gradient(180deg,#212529,#343a40);
+}
+
+.sidebar-menu .nav-link.active {
+    background: rgba(255,255,255,.15);
+    border-radius: 12px;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.app-header {
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+
 /* =========================================
    STYLE TAMBAHAN (BASE)
    ========================================= */

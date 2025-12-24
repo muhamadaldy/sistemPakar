@@ -1,0 +1,144 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('img/sawah.jpg') no-repeat center center/cover;
+}
+
+/* Wrapper */
+.login-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,.6), rgba(0,128,0,.4));
+    z-index: 1;
+}
+
+/* Card */
+.login-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 30px;
+    color: #fff;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+/* Title */
+.login-card h3 {
+    font-weight: 600;
+}
+
+/* Button */
+.btn-login {
+    background: #ffffff;
+    color: #2d6a4f;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.btn-login:hover {
+    background: #d8f3dc;
+}
+
+/* Floating labels */
+.form-control {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+}
+
+.form-control:focus {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    box-shadow: none;
+}
+
+.form-floating label {
+    color: #f1f1f1;
+}
+
+/* Password Eye */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    z-index: 5;
+}
+
+/* Animation */
+.animate-fade {
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+/* A. Tablet & Layar Kecil (Max-width: 991px) */
+@media (max-width: 991.98px) {
+    .login-card {
+        padding: 30px; /* Sedikit mengurangi padding */
+    }
+}
+
+/* B. Mobile Phone / HP (Max-width: 576px) */
+@media (max-width: 576.98px) {
+    .login-card {
+        padding: 25px 20px; /* Padding lebih kecil agar muat di layar sempit */
+        border-radius: 10px;
+    }
+
+    .login-card h3 {
+        font-size: 1.5rem; /* Ukuran font judul diperkecil */
+        margin-bottom: 20px !important;
+    }
+
+    .form-floating > label {
+        font-size: 0.9rem; /* Ukuran label diperkecil */
+    }
+
+    .btn-login {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    
+    /* Mengatur ulang margin agar tidak terlalu mepet di HP */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* C. Landscape Mode pada HP (Tinggi layar pendek) */
+@media (max-height: 600px) {
+    .min-vh-100 {
+        min-height: auto !important; /* Hapus tinggi minimum 100vh */
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .login-wrapper {
+        height: auto; /* Biarkan wrapper mengikuti konten */
+        min-height: 100vh;
+    }
+}
